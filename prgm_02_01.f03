@@ -6,6 +6,8 @@
 !
 !     This program is written in atomic units.
 !
+!     Program Author:  Christian Dwyer, Chemistry and Biochemistry, UC Merced
+!     Program Advisor: Hrant Hratchian, Chemistry and Biochemistry, UC Merced
 !
 !     Variable Declarations
       implicit none
@@ -24,6 +26,7 @@
 !
 !     Read in m, l, n1, and n2 from the command line.
 !
+      fail = .false.
       NCmdLineArgs = command_argument_count()
       if(NCmdLineArgs.ne.4) then
         write(*,9000) NCmdLineArgs
@@ -42,7 +45,7 @@
 !     Given the input parameters, evaluate the kinetic energy integral between
 !     particle-in-a-box eigenfunctions n1 and n2.
 !
-      tMatrixElement = PIB_1D_T_Element(l,n1,n2)
+      tMatrixElement = PIB_1D_T_Element(m,l,n1,n2)
       write(*,2000) n1,n2,tMatrixElement
 !
 !     The end of the job...
@@ -51,7 +54,7 @@
       end program prgm_02_01
 
 
-      real function PIB_1D_T_Element(l,n1,n2)
+      real function PIB_1D_T_Element(m,l,n1,n2)
 !
 !     This function evaluates the kinetic energy matrix element < n1 | T | n2 >,
 !     where n1 and n2 are particle-in-a-box eigenstate labels and T is the
@@ -60,22 +63,20 @@
 !
 !     Variable Declarations
       implicit none
-      real,intent(in)::l
+      real,intent(in)::m,l
       integer,intent(in)::n1,n2
       real::prefactor
+      real(kind=8),parameter::pi=4.D0*datan(1.D0)
 !
 !     The case where n1=n2 is different than n1\=n2. For this reason, we use an
 !     if block to separate the evaluation of the kinetic energy integral for
 !     these two different cases.
 !
+      prefactor = (pi**2)/(2*m*(l**2))
       if(n1.eq.n2) then
-
-        ***WRITE CODE HERE***
-
+        PIB_1D_T_Element = prefactor*(n1**2)
       else
-
-        ***WRITE CODE HERE***
-
+        PIB_1D_T_Element = 0
       endIf
 !
       end function PIB_1D_T_Element
