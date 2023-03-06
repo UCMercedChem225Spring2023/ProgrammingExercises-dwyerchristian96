@@ -3,6 +3,8 @@
 !     This program reads a 3x3 matrix from a user-provided input file. After the
 !     file is opened and read, it is closed and then printed.
 !
+!     Program Author:  Christian Dwyer, Chemistry and Biochemistry, UC Merced
+!     Program Advisor: Hrant Hratchian, Chemistry and Biochemistry, UC Merced
 !
       implicit none
       integer,parameter::inFileUnitA=10
@@ -53,7 +55,9 @@
 !
       write(*,*)' Printing Matrix'
 !
-      ADD CODE HERE
+      do i = 1,3
+        write(*,1000) matrix(1,i),matrix(2,i),matrix(3,i)
+      endDo
 !
 !
       return
