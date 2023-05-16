@@ -1,0 +1,22 @@
+Answers to Programming Exercise 5 Problems
+
+Q1: Complete! See plot_05_Q1 for the plot.
+
+Q2: Complete! See plot_05_Q2 for the plot.
+
+Q3: Complete! See plot_05_Q3 for the plot. Changing the potential from V(x) = 1x to 
+    V(x) = 10x caused the vertex of the ground state wavefunction to shift to the 
+    left. Since both wavefunctions have a linear potential function, they have a 
+    similar shape. As an important note, the V(x) = 1x wavefunction uses 4 basis 
+    functions, while the V(x) = 10x wavefunction uses 7 basis functions.
+
+Q4: Complete! See plot_05_Q4 for the plot. Changing the particle mass from m = 1 to 
+    m = 10 resulted in significant differences compared to the plot in Q3. First, 
+    the V(x) = 1x wavefunction completely overlapped the V(x) = 10x wavefunction in 
+    plot_05_Q3. Upon further analysis, this occurred because the first four terms 
+    of both wavefunctions had incredibly similar weighted coefficients. Second, the 
+    V(x) = 10x wavefunction was the only wavefunction in our analysis to form a 
+    potential well. This occurred because the ground state eigenvector contained 
+    all negative coefficients. From a physical perspective, setting m = 10 and 
+    V(x) = 10x may have resulted in a system that exhibits non-classical behavior 
+    due to the effects of the added potential.
